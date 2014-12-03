@@ -1,0 +1,9 @@
+[Core]
+Name = Sumologic
+Module = sumologic
+
+[Python]
+Version=2+
+
+[Documentation]
+Description = This plugin run the sumologic search and collector functions
