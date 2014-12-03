@@ -19,9 +19,9 @@ class Sumologic(BotPlugin):
     def get_configuration_template(self):
         """ configuration entries """
         config = {
-            'username': 'api_username',
-            'password': 'api_password',
-            'pastebin_url': 'api_url',
+            'username': u'api_username',
+            'password': u'api_password',
+            'pastebin_url': u'url',
         }
         return config
 
