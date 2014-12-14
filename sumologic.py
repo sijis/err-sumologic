@@ -4,14 +4,17 @@ import logging
 import datetime
 import pprint
 
-import requests
-
 log = logging.getLogger(name='errbot.plugins.Sumologic')
+
+try:
+    import requests
+except ImportError:
+    log.error("Please install 'requests' python package")
 
 try:
     import sumologic
 except ImportError:
-    log.info("Please install 'sumologic' python package")
+    log.error("Please install 'sumologic' python package")
 
 
 class Sumologic(BotPlugin):
