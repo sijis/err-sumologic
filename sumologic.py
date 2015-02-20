@@ -85,8 +85,10 @@ class Sumologic(BotPlugin):
         collector.delete(collector_name)
         message = 'collector {0} deleted.'.format(collector_name)
         self.send(msg.frm,
-                  '{0}: {1}'.format(msg.nick, message),
-                  message_type=msg.type)
+                  message,
+                  message_type=msg.type,
+                  in_reply_to=msg,
+                  groupchat_nick_reply=True)
 
     @botcmd
     def sumologic_search(self, msg, args):
@@ -109,5 +111,7 @@ class Sumologic(BotPlugin):
         results = search.query(args, **options)
         message = self._parse_results(results, options['limits'])
         self.send(msg.frm,
-                  '{0}: {1}'.format(msg.nick, message),
-                  message_type=msg.type)
+                  message,
+                  message_type=msg.type,
+                  in_reply_to=msg,
+                  groupchat_nick_reply=True)
