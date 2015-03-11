@@ -55,8 +55,8 @@ class Sumologic(BotPlugin):
             # parse the stuff
             pastebin_url = self.pastebin(results_set)
             text = 'Showing {0} of {1} results. {2}'.format(
-                limit,
                 len(results_set),
+                limit,
                 pastebin_url
             )
             log.info(text)
